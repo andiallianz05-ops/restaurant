@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumange Eatery — Kehangatan Rasa & Semangat Kuliner Sulawesi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display untuk judul elegan & Plus Jakarta Sans untuk teks modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        spice: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            500: '#b45309', // Amber/Rempah
+                            700: '#78350f', // Cokelat kayu/kluwek
+                            900: '#29150c', // Dark espresso
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-spice-50 text-stone-800 font-sans antialiased selection:bg-amber-700 selection:text-white">
+
+    <!-- Navigasi Utama -->
+    <header class="fixed w-full top-0 z-50 bg-spice-50/90 backdrop-blur-md border-b border-stone-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-spice-700 text-amber-400 flex items-center justify-center font-serif font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        S
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl tracking-tight text-spice-900 block leading-none">Sumange</span>
+                        <span class="text-xs font-semibold tracking-widest uppercase text-amber-700">Eatery</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+                    <a href="#tentang" class="hover:text-amber-700 transition-colors">Tentang Kami</a>
+                    <a href="#visi-misi" class="hover:text-amber-700 transition-colors">Visi & Misi</a>
+                    <a href="#menu" class="hover:text-amber-700 transition-colors">Menu Andalan</a>
+                    <a href="#keunggulan" class="hover:text-amber-700 transition-colors">Keunggulan & Layanan</a>
+                    <a href="#kontak" class="px-5 py-2.5 rounded-full bg-spice-700 text-white hover:bg-spice-900 transition-all shadow-sm">
+                        Hubungi Kami
+                    </a>
+                </nav>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-stone-700 hover:bg-stone-200/60 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#tentang" class="block py-2 text-base font-medium text-stone-700 hover:text-amber-700">Tentang Kami</a>
+            <a href="#visi-misi" class="block py-2 text-base font-medium text-stone-700 hover:text-amber-700">Visi & Misi</a>
+            <a href="#menu" class="block py-2 text-base font-medium text-stone-700 hover:text-amber-700">Menu Andalan</a>
+            <a href="#keunggulan" class="block py-2 text-base font-medium text-stone-700 hover:text-amber-700">Keunggulan & Layanan</a>
+            <a href="#kontak" class="block w-full text-center py-3 mt-2 rounded-xl bg-spice-700 text-white font-semibold">Reservasi & Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden bg-spice-900 text-white">
+        <!-- Latar Belakang Gradasi & Pola Halus -->
+        <div class="absolute inset-0 opacity-25">
+            <img src="https://placehold.co/1920x1080/29150c/d97706?text=Hidangan+Khas+Sulawesi+Sumange+Eatery" 
+                 onerror="this.style.display='none'" 
+                 alt="Suasana Hidangan Sulawesi" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-spice-900 via-spice-900/95 to-spice-900/75"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-fire-flame-curved"></i> Autentik Kuliner Nusantara
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                        Merayakan Kehangatan Rasa & <span class="text-amber-400 italic">Semangat</span> Kuliner Sulawesi
+                    </h1>
+                    <p class="text-stone-300 text-lg sm:text-xl max-w-2xl leading-relaxed">
+                        Terinspirasi dari filosofi Bugis-Makassar <strong>"Sumange"</strong>—jiwa dan energi kehidupan. Kami menghadirkan warisan resep rempah turun-temurun dengan sentuhan modern yang higienis dan berkelas.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#menu" class="px-7 py-3.5 rounded-full bg-amber-500 hover:bg-amber-600 text-spice-900 font-bold transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                            Jelajahi Menu Andalan <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#kontak" class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold transition-all">
+                            Pesan & Katering
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kartu Sorotan Hero -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-500/20 bg-stone-800">
+                        <img src="Coto Makassar.jfif" alt=""> 
+                             
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
+                            <p class="text-amber-400 text-xs font-bold uppercase tracking-wider">Warisan Rasa</p>
+                            <p class="text-white font-serif text-xl font-semibold mt-1">100% Rempah Pilihan Asli Sulawesi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami (About Us) -->
+    <section id="tentang" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Kolase Foto Suasana -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="Transform Your Restaurant Into a Premium Dining Destination!.jfif" 
+                             alt="Suasana Restoran" 
+                             class="rounded-2xl shadow-md w-full h-64 object-cover">
+                        <div class="p-6 rounded-2xl bg-spice-100 border border-spice-200">
+                            <p class="font-serif text-3xl font-bold text-spice-700">100%</p>
+                            <p class="text-sm font-medium text-stone-700 mt-1">Resep Autentik Turun-Temurun</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="p-6 rounded-2xl bg-spice-900 text-white">
+                            <i class="fa-solid fa-mortar-pestle text-amber-400 text-2xl mb-2"></i>
+                            <p class="font-serif text-lg font-semibold">Bumbu Segar</p>
+                            <p class="text-xs text-stone-300 mt-1">Diracik harian tanpa pengawet buatan</p>
+                        </div>
+                        <img src="Coto Makassar by Meat Gong.jfif" 
+                             alt="Penyajian Hidangan" 
+                             class="rounded-2xl shadow-md w-full h-64 object-cover">
+                    </div>
+                </div>
+
+                <!-- Narasi Tentang Kami -->
+                <div class="space-y-6">
+                    <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Tentang Kami</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-spice-900 leading-snug">
+                        Menghadirkan Jiwa & Kehangatan Sulawesi ke Meja Makan Modern
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed text-base sm:text-lg">
+                        <strong>Sumange Eatery</strong> hadir untuk memperkenalkan kekayaan rasa autentik dari tanah Sulawesi kepada masyarakat luas. Terinspirasi dari kata <em>"Sumange"</em> dalam budaya Bugis-Makassar yang bermakna <strong>semangat, jiwa, dan energi kehidupan</strong>, kami percaya bahwa setiap suapan makanan bukan sekadar pengisi perut, melainkan sumber kebahagiaan yang menyatukan keluarga dan sahabat.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Didirikan dengan dedikasi tinggi terhadap warisan kuliner Nusantara, kami memadukan resep kaya rempah dengan standar penyajian yang higienis, modern, dan nyaman—menjaga keaslian cita rasa Sulawesi tanpa kompromi.
+                    </p>
+                    
+                    <!-- Visi & Misi Box -->
+                    <div id="visi-misi" class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-spice-50 border border-stone-200">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Visi Kami</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed">
+                                Menjadi brand kuliner khas Sulawesi terdepan yang dicintai masyarakat luas dan menjadi kebanggaan kuliner Nusantara.
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-spice-50 border border-stone-200">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Misi Utama</h3>
+                            <ul class="text-sm text-stone-600 space-y-1.5 list-disc list-inside">
+                                <li>Bahan baku segar & rempah asli Sulawesi.</li>
+                                <li>Pelayanan hangat & berkesan.</li>
+                                <li>Melestarikan budaya kuliner Sulawesi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Andalan (Signature Dishes) -->
+    <section id="menu" class="py-20 lg:py-28 bg-spice-50 border-y border-stone-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Katalog Hidangan</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-spice-900 mt-2">Menu Andalan Sumange Eatery</h2>
+                <p class="text-stone-600 mt-3">
+                    Setiap hidangan diracik dengan bumbu khas yang dimasak perlahan untuk menghasilkan kedalaman rasa yang tak terlupakan.
+                </p>
+
+                <!-- Filter Kategori Interaktif -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button onclick="filterMenu('all')" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold bg-spice-700 text-white shadow-sm transition-all" data-filter="all">
+                        Semua Menu
+                    </button>
+                    <button onclick="filterMenu('main')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-stone-700 border border-stone-200 hover:border-amber-600 transition-all" data-filter="main">
+                        Hidangan Utama
+                    </button>
+                    <button onclick="filterMenu('dessert')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-stone-700 border border-stone-200 hover:border-amber-600 transition-all" data-filter="dessert">
+                        Penutup & Segar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Menu -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Item 1: Coto Makassar -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="main">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="Coto Makassar by Meat Gong.jfif" 
+                             alt="Coto Makassar" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-spice-900/85 backdrop-blur-sm text-amber-300 text-xs font-semibold">
+                            Best Seller
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Coto Makassar</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">Utama</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Sup daging sapi dan jeroan pilihan yang dimasak dalam kuah kental berempah dan kacang tanah sangrai, disajikan bersama ketupat hangat dan sambal tauco.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-pepper-hot text-amber-600 mr-1"></i> Kaya Rempah</span>
+                            <span>Disajikan Hangat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Sop Konro & Konro Bakar -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="main">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="KONRO SOUP.jfif" 
+                             alt="Sop Konro dan Konro Bakar" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-spice-900/85 backdrop-blur-sm text-amber-300 text-xs font-semibold">
+                            Chef's Recommendation
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Sop Konro & Konro Bakar</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">Utama</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Iga sapi empuk pilihan, tersedia dalam kuah kluwek hitam gurih atau dibakar sempurna dengan olesan bumbu kacang manis-gurih khas Makassar.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-fire text-amber-600 mr-1"></i> Iga Empuk</span>
+                            <span>Kuah / Bakar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Pallubasa -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="main">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="Pallu Basa - Makassar.jfif" 
+                             alt="Pallubasa" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Pallubasa</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">Utama</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Hidangan daging sapi berkuah gurih dengan taburan kelapa parut sangrai (<em>serundeng</em>) khas, lengkap dengan pilihan kuning telur ayam kampung (<em>alas</em>).
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-bowl-food text-amber-600 mr-1"></i> Kelapa Sangrai</span>
+                            <span>Opsi Telur Alas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Ikan Bakar Rica-Rica / Parape -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="main">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="Grilled Rabbit Fish With Spicy Rica-Rica And Dabu-Dabu Salsa.jfif" 
+                             alt="Ikan Bakar Rica-Rica dan Parape" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Ikan Bakar Rica / Parape</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">Utama</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Ikan laut segar (Bandeng/Kakap/Kuwe) dibakar dengan pilihan bumbu pedas segar Rica-Rica khas Manado atau manis gurih bumbu Parape Makassar.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-fish text-amber-600 mr-1"></i> Ikan Laut Segar</span>
+                            <span>Sambal Dabu-dabu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Es Pisang Ijo -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="dessert">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="Siapa tidak kenal es pisang ijo_ Kudapan manis nan nikmat dari Makassar ini cocok sekali dinikmati dingin_ Meski terkesan kudapan, tapi es pisang ijo sangat mengenyangkan lho!.jfif" 
+                             alt="Es Pisang Ijo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-900/85 backdrop-blur-sm text-emerald-200 text-xs font-semibold">
+                            Favorit Penutup
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Es Pisang Ijo</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">Penutup</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Pisang raja manis dibalut adonan tepung beras hijau pandan wangi, disajikan bersama bubur sumsum lembut, sirup merah khas Makassar, dan es serut.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-snowflake text-emerald-600 mr-1"></i> Manis & Segar</span>
+                            <span>Sirup Khas Makassar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Es Pallu Butung -->
+                <div class="menu-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/80 transition-all duration-300 flex flex-col" data-category="dessert">
+                    <div class="relative overflow-hidden aspect-[16/11] bg-stone-200">
+                        <img src="Dapur Resep.jfif" 
+                             alt="Es Pallu Butung" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-serif text-xl font-bold text-spice-900">Es Pallu Butung</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">Penutup</span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                                Sajian segar perpaduan potongan pisang raja kukus, bubur sumsum gurih lembut, sirup merah autentik, dan susu yang menyegarkan tenggorokan.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                            <span><i class="fa-solid fa-ice-cream text-rose-600 mr-1"></i> Lembut & Dingin</span>
+                            <span>Klasik Sulawesi</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan & Layanan (Values & Services) -->
+    <section id="keunggulan" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Nilai & Pelayanan</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-spice-900 mt-2">Mengapa Memilih Sumange Eatery?</h2>
+            </div>
+
+            <!-- 4 Pillar Keunggulan -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="p-7 rounded-3xl bg-spice-50 border border-stone-200/80 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-spice-700 text-amber-300 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Rempah Asli Sulawesi</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Kami mendatangkan rempah-rempah kunci langsung dari Sulawesi untuk memastikan keaslian rasa tetap terjaga.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-spice-50 border border-stone-200/80 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-spice-700 text-amber-300 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Higienis & Berkualitas</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Pengolahan dilakukan dengan standar kebersihan tinggi menggunakan bahan-bahan pilihan segar setiap hari.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-spice-50 border border-stone-200/80 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-spice-700 text-amber-300 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Homey & Modern</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Suasana tempat makan yang nyaman untuk makan siang bisnis, kumpul keluarga, maupun bersantai.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-spice-50 border border-stone-200/80 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-spice-700 text-amber-300 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-spice-900 mb-2">Katering Profesional</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        Siap melayani kebutuhan konsumsi untuk acara kantor, pernikahan, arisan, dan syukuran keluarga.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Banner Layanan Kami -->
+            <div class="rounded-3xl bg-spice-900 text-white p-8 sm:p-12 lg:p-14 shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-1">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Layanan Kami</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mt-2">Nikmati Sumange di Mana Saja</h3>
+                        <p class="text-stone-300 text-sm mt-3 leading-relaxed">
+                            Fleksibilitas layanan untuk menemani setiap momen bersantap Anda.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-store text-amber-400 text-2xl mb-3"></i>
+                            <h4 class="font-bold text-base">Dine-In & Takeaway</h4>
+                            <p class="text-xs text-stone-300 mt-1.5 leading-relaxed">Nikmati hangatnya sajian di gerai atau bawa pulang dengan kemasan higienis.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-motorcycle text-amber-400 text-2xl mb-3"></i>
+                            <h4 class="font-bold text-base">Online Delivery</h4>
+                            <p class="text-xs text-stone-300 mt-1.5 leading-relaxed">Tersedia di platform pesan-antar daring (GoFood, GrabFood, ShopeeFood).</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-box-open text-amber-400 text-2xl mb-3"></i>
+                            <h4 class="font-bold text-base">Nasi Kotak & Buffet</h4>
+                            <p class="text-xs text-stone-300 mt-1.5 leading-relaxed">Paket katering fleksibel sesuai anggaran dan skala acara Anda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi -->
+    <section id="kontak" class="py-20 bg-spice-100/70 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Detail Informasi Kontak -->
+                <div class="space-y-6">
+                    <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Kunjungi & Hubungi Kami</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-spice-900">
+                        Rasakan Langsung Kehangatan Kuliner Sulawesi
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed">
+                        Kami siap menyambut kedatangan Anda beserta keluarga maupun rekan kerja, atau membantu merencanakan hidangan katering terbaik untuk acara spesial Anda.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-spice-900">Alamat Outlet</h4>
+                                <p class="text-sm text-stone-600 mt-0.5">[Isi Alamat Lengkap Gerai Sumange Eatery]</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-spice-900">Jam Operasional</h4>
+                                <p class="text-sm text-stone-600 mt-0.5">Setiap Hari, Pukul 10.00 – 22.00 WIB</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="flex-1 flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <h4 class="font-bold text-sm text-spice-900">Telepon / WhatsApp Reservasi</h4>
+                                    <p id="wa-number" class="text-sm text-stone-600 mt-0.5">+62 812-3456-7890</p>
+                                </div>
+                                <button onclick="copyContact()" class="px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-xs font-semibold text-stone-700 transition-colors">
+                                    <i class="fa-regular fa-copy mr-1"></i> Salin Nomor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#kontak" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-stone-200 text-sm font-medium text-stone-700 hover:border-amber-600 transition-all">
+                            <i class="fa-brands fa-instagram text-pink-600 text-lg"></i> @sumange.eatery
+                        </a>
+                        <a href="#kontak" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-stone-200 text-sm font-medium text-stone-700 hover:border-amber-600 transition-all">
+                            <i class="fa-regular fa-envelope text-amber-700 text-lg"></i> halo@sumangeeatery.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulir Cepat Reservasi / Katering -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200">
+                    <h3 class="font-serif text-2xl font-bold text-spice-900 mb-2">Reservasi Meja / Tanya Katering</h3>
+                    <p class="text-sm text-stone-500 mb-6">Isi detail kebutuhan Anda, tim kami akan segera menghubungi kembali.</p>
+                    
+                    <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Nama Lengkap</label>
+                            <input type="text" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-amber-600 text-sm">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Nomor WhatsApp</label>
+                                <input type="tel" required placeholder="0812xxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-amber-600 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Keperluan</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-amber-600 text-sm bg-white">
+                                    <option>Reservasi Meja (Dine-In)</option>
+                                    <option>Pesanan Katering / Acara</option>
+                                    <option>Nasi Kotak Perusahaan</option>
+                                    <option>Kerja Sama / Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Catatan / Jumlah Tamu</label>
+                            <textarea rows="3" placeholder="Contoh: Reservasi untuk 6 orang hari Sabtu pukul 19.00..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-amber-600 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-spice-700 hover:bg-spice-900 text-white font-bold text-sm transition-all shadow-md">
+                            Kirim Permintaan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-spice-900 text-stone-400 py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-spice-900 flex items-center justify-center font-serif font-bold">S</div>
+                <span class="font-serif font-bold text-white text-lg">Sumange Eatery</span>
+            </div>
+            <p class="text-xs text-center sm:text-right">
+                &copy; 2026 Sumange Eatery. All Rights Reserved. Merayakan Kehangatan Kuliner Sulawesi.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Kotak Notifikasi Toast (Pengganti alert) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden transform transition-all duration-300 translate-y-4 opacity-0">
+        <div class="bg-spice-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-amber-500/30 flex items-center gap-3 text-sm">
+            <i class="fa-solid fa-circle-check text-amber-400 text-lg"></i>
+            <span id="toast-message">Pesan berhasil dikirim!</span>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Menu Mobile
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu mobile saat link diklik
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filter Menu Kategori
+        function filterMenu(category) {
+            const cards = document.querySelectorAll('.menu-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('bg-white', 'text-stone-700', 'border', 'border-stone-200');
+                    btn.classList.add('bg-spice-700', 'text-white');
+                } else {
+                    btn.classList.add('bg-white', 'text-stone-700', 'border', 'border-stone-200');
+                    btn.classList.remove('bg-spice-700', 'text-white');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Fungsi Notifikasi Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3500);
+        }
+
+        // Salin Nomor Kontak
+        function copyContact() {
+            const textToCopy = document.getElementById('wa-number').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Nomor WhatsApp berhasil disalin!');
+        }
+
+        // Penanganan Submit Formulir
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('Terima kasih! Permintaan Anda telah kami terima.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
